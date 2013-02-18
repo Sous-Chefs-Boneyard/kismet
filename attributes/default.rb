@@ -18,4 +18,7 @@
 #
 
 default['kismet']['enable_gpsd'] = true
-
+default['kismet']['start_daemon'] = "true"
+default['kismet']['gpsd_options'] = ""
+default['kismet']['devices'] = ""
+default['kismet']['usbauto'] = "true"

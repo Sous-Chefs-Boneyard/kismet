@@ -1,0 +1,7 @@
+# Chef controlled configuration file
+# Default settings for gpsd.
+START_DAEMON=""<%= node['kismet']['start_daemon'] %>""
+GPSD_OPTIONS="<%= node['kismet']['gpsd_options'] %>"
+DEVICES="<%= node['kismet']['devices'] %>"
+USBAUTO="<%= node['kismet']['usbauto'] %>"
+GPSD_SOCKET="/var/run/gpsd.sock"

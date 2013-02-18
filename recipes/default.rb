@@ -21,6 +21,13 @@
 if node['kismet']['enable_gpsd']
   package "gpsd"
 
+  template "/etc/default/gpsd" do
+    source "gpsd.erb"
+    owner "root"
+    group "root"
+    mode 00644
+  end
+
   service "gpsd" do
     supports :status => true, :restart => true
     action [ :enable, :start ]
