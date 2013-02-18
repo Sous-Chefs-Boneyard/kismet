@@ -33,6 +33,7 @@ default['kismet']['usbauto'] = "true"
 # Additional comments for specific settings are from the kismet.conf
 # file and credit goes to the Kismet project for their content.
 default['kismet']['config']['version']      = "2009-newcore"
+default['kismet']['config']['logdefault']   = "Kismet"
 default['kismet']['config']['servername']   = "my_server"
 default['kismet']['config']['logprefix']    = "/var/log/kismet"
 default['kismet']['config']['hidedata']     = "true"
