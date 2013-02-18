@@ -1,17 +1,19 @@
 kismet Cookbook
 ===============
-This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for 
+
+This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for
 setting up a wardriving rig using Chef Solo.
 
 Requirements
 ------------
+
 - `apt` - Apt is used to configure the kismet repository
 
 Attributes
 ----------
-This recipe has an enormous number of attributes.  Your best bet for understanding all
-attributes is to check the attributes file and also read the kismet.conf.erb template 
-file.  That file best describes all configuration options
+
+The attributes in this cookbook are used to drive the configuration
+dynamically. The following are used for the `gpsd` service.
 
 - `enable_gpsd` - Install and use gpsd.  Defaults to true
 - `start_daemon` - Start the daemon.  Defaults to true
@@ -20,31 +22,79 @@ file.  That file best describes all configuration options
 empty string
 - `usbauto` - Auto discover USB devices.  Defaults to true
 
-- `servername` - "my_server"
-- `logprefix` - "/var/log/kismet"
-- `allowplugins` - "true"
-- `ncsource` - The source interface to listen on.  This is probably the most important 
-attribute in this cookbook.  Defaults to nil.
-- `preferredchannels` - Channels to dwell on
-- `channelvelocity` - The number of seconds to stay on each channel
-- `listen` - URL the server listens on
-- `allowedhosts` - Hosts allowed to connect to the server.  Defaults to 127.0.0.1
-- `logtypes` - Log types to log.  Defaults to "pcapdump,gpsxml,netxml,nettxt,alert"
-- `pcapdumpformat` - Pcap dump format. Defaults to "ppi"
-- `defaultlogtitle` - Log title prefix.  Defaults to "Kismet"
-- `maxclients` - Max clients allowed to connect to the server.  Defaults to "5"
-- `maxbacklog` - Max backlog before the server disconnects clients.  Defaults to "5000"
+The remaining attributes in the `attributes/default.rb` are directly
+from the `kismet.conf` file and are namespaced under
+`node['kismet']['config']`. Each attribute key corresponds to a
+configuratino option in the `kismet.conf` file.
+
+Values can be an Integer, String or an Array. Integer and String
+values will be rendered like this:
+
+    key=value
+
+Array values will get an entry for each element in the array. For
+example, a value of `['value', 'sale', 'option']` will be rendered
+like this:
+
+    key=value
+    key=sale
+    key=option
+
+The Ruby literals "false" and "true" are not used for values of Kismet
+configuration options. They are string values instead.
+
+In practical terms, these attributes:
+
+    default['kismet']['config']['version'] = "2009-newcore"
+    default['kismet']['config']['hidedata']     = "true"
+    default['kismet']['config']['enablespeech'] = "false"
+    default['kismet']['config']['alertbacklog']     = 50
+    default['kismet']['config']['ouifile'] = [
+      '/etc/manuf',
+      '/usr/share/wireshark/wireshark/manuf',
+      '/usr/share/wireshark/manuf'
+    ]
+
+Will be rendered in `/etc/kismet/kismet.conf`:
+
+    version=2009-newcore
+    hidedata=true
+    enablespeech=false
+    alertbacklog=50
+    ouifile=/etc/manuf
+    ouifile=/usr/share/wireshark/wireshark/manuf
+    ouifile=/usr/share/wireshark/manuf
 
 Usage
 -----
-Run the default recipe on your node
+
+Modify attributes for the configuration as required in a role. Add
+`recipe[kismet]` to your node's run list.
 
 Contributing
 ------------
+
 - 1. Fork the repository on Github
 - 2. Write you change
 - 3. Submit a Pull Request using Github
 
 License and Authors
 -------------------
-Tim Smith - tsmith84@gmail.com
+
+- Tim Smith <tsmith84@gmail.com>
+- Joshua Timberman <opensource@housepub.org>
+
+Copyright:: 2013, Tim Smith
+License:: Apache License, Version 2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
