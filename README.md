@@ -13,10 +13,11 @@ This recipe has an enormous number of attributes.  Your best bet for understandi
 attributes is to check the attributes file and also read the kismet.conf.erb template 
 file.  That file best describes all configuration options
 
-- `enable_gpsd` - Install and use gpsd
-- `start_daemon` - Start the daemon.  Default to true
-- `gpsd_options` - Options to pass to the daemon.  Defaults to empty string
-- `devices` - Path to device.  This is only needed for serial devices
+- `enable_gpsd` - Install and use gpsd.  Defaults to true
+- `start_daemon` - Start the daemon.  Defaults to true
+- `gpsd_options` - Options to pass to the daemon.  Defaults to an empty string
+- `devices` - Path to device.  This is only needed for serial devices.  Defaults to an
+empty string
 - `usbauto` - Auto discover USB devices.  Defaults to true
 
 - `servername` - "my_server"
@@ -40,12 +41,9 @@ Run the default recipe on your node
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Write you change
-3. Submit a Pull Request using Github
+- 1. Fork the repository on Github
+- 2. Write you change
+- 3. Submit a Pull Request using Github
 
 License and Authors
 -------------------
