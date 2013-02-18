@@ -46,6 +46,17 @@ package "kismet" do
   action :install
 end
 
+directory node['kismet']['logprefix'] do
+  owner "root"
+  group "root"
+  mode 00755
+  action :create
+  recursive true
+end
 
-
-
+template "/etc/kismet/kismet.conf" do
+  source "kismet.conf.erb"
+  owner "root"
+  group "root"
+  mode 00644
+end

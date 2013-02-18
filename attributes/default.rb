@@ -22,3 +22,17 @@ default['kismet']['start_daemon'] = "true"
 default['kismet']['gpsd_options'] = ""
 default['kismet']['devices'] = ""
 default['kismet']['usbauto'] = "true"
+
+default['kismet']['servername'] = "my_server"
+default['kismet']['logprefix'] = "/var/log/kismet"
+default['kismet']['allowplugins'] = "true"
+default['kismet']['ncsource'] = nil
+default['kismet']['preferredchannels'] = "1,6,11"
+default['kismet']['channelvelocity'] = 3
+default['kismet']['listen'] = "tcp://127.0.0.1:2501"
+default['kismet']['allowedhosts'] = "127.0.0.1"
+default['kismet']['logtypes'] = "pcapdump,gpsxml,netxml,nettxt,alert"
+default['kismet']['pcapdumpformat'] = "ppi"
+default['kismet']['defaultlogtitle'] = "Kismet"
+default['kismet']['maxclients'] = 5
+default['kismet']['maxbacklog'] = 5000
