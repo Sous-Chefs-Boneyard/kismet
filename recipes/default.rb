@@ -38,6 +38,7 @@ end
 apt_repository "kismet_wireless" do
   uri "https://www.kismetwireless.net/code/"
   components ["kismet"]
+  key "https://www.kismetwireless.net/code/dists/kismet-release.gpg"
   distribution node['lsb']['codename']
 end
 
@@ -46,7 +47,7 @@ package "kismet" do
   action :install
 end
 
-directory node['kismet']['logprefix'] do
+directory node['kismet']['config']['logprefix'] do
   owner "root"
   group "root"
   mode 00755
@@ -59,4 +60,5 @@ template "/etc/kismet/kismet.conf" do
   owner "root"
   group "root"
   mode 00644
+  variables(:config_opts => node['kismet']['config'])
 end
