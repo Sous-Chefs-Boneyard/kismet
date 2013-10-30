@@ -19,46 +19,46 @@
 
 # install gpsd and enable the service
 if node['kismet']['enable_gpsd']
-  package "gpsd"
+  package 'gpsd'
 
-  template "/etc/default/gpsd" do
-    source "gpsd.erb"
-    owner "root"
-    group "root"
+  template '/etc/default/gpsd' do
+    source 'gpsd.erb'
+    owner 'root'
+    group 'root'
     mode 00644
   end
 
-  service "gpsd" do
-    supports :status => true, :restart => true
-    action [ :enable, :start ]
+  service 'gpsd' do
+    supports status: true, restart: true
+    action [:enable, :start]
   end
 end
 
 # add the apt repository for kismet
-apt_repository "kismet_wireless" do
-  uri "https://www.kismetwireless.net/code/"
-  components ["kismet"]
-  key "https://www.kismetwireless.net/code/dists/kismet-release.gpg"
+apt_repository 'kismet_wireless' do
+  uri 'https://www.kismetwireless.net/code/'
+  components ['kismet']
+  key 'https://www.kismetwireless.net/code/dists/kismet-release.gpg'
   distribution node['lsb']['codename']
 end
 
 # install kismet
-package "kismet" do
+package 'kismet' do
   action :install
 end
 
 directory node['kismet']['config']['logprefix'] do
-  owner "root"
-  group "root"
+  owner 'root'
+  group 'root'
   mode 00755
   action :create
   recursive true
 end
 
-template "/etc/kismet/kismet.conf" do
-  source "kismet.conf.erb"
-  owner "root"
-  group "root"
+template '/etc/kismet/kismet.conf' do
+  source 'kismet.conf.erb'
+  owner 'root'
+  group 'root'
   mode 00644
-  variables(:config_opts => node['kismet']['config'])
+  variables(config_opts: node['kismet']['config'])
 end
