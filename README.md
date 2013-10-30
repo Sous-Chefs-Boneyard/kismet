@@ -78,6 +78,15 @@ Contributing
 - 2. Write you change
 - 3. Submit a Pull Request using Github
 
+Testing
+-------
+
+Test that the default recipe converges automatically with
+[test-kitchen](http://rubygems.org/gems/test-kitchen).
+
+    bundle install
+    bundle exec kitchen test
+
 License and Authors
 -------------------
 
