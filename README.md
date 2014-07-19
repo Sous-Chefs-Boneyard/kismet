@@ -93,7 +93,7 @@ License and Authors
 - Tim Smith <tsmith84@gmail.com>
 - Joshua Timberman <opensource@housepub.org>
 
-Copyright:: 2013, Tim Smith
+Copyright:: 2013-2014, Tim Smith
 License:: Apache License, Version 2.0
 
 Licensed under the Apache License, Version 2.0 (the "License");

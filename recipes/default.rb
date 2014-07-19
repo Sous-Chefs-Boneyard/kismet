@@ -2,7 +2,7 @@
 # Cookbook Name:: kismet
 # Recipe:: default
 #
-# Copyright 2013, Tim Smith - tsmith84@gmail.com
+# Copyright 2013-2014, Tim Smith - tsmith84@gmail.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ if node['kismet']['enable_gpsd']
     source 'gpsd.erb'
     owner 'root'
     group 'root'
-    mode 00644
+    mode '0644'
   end
 
   service 'gpsd' do
@@ -50,7 +50,7 @@ end
 directory node['kismet']['config']['logprefix'] do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '0755'
   action :create
   recursive true
 end
@@ -59,6 +59,6 @@ template '/etc/kismet/kismet.conf' do
   source 'kismet.conf.erb'
   owner 'root'
   group 'root'
-  mode 00644
+  mode '0644'
   variables(config_opts: node['kismet']['config'])
 end
