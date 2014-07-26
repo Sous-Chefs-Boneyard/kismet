@@ -1,6 +1,8 @@
 kismet Cookbook
 ===============
 
+[![Build Status](https://travis-ci.org/tas50/chef_kismet.svg?branch=master)](https://travis-ci.org/tas50/chef_kismet)
+
 This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for
 setting up a wardriving rig using Chef Solo.
 
