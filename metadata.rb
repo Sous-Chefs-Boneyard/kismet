@@ -6,5 +6,11 @@ description      'Installs/Configures kismet'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.2.0'
 
-supports 'ubuntu'
+%w(debian ubuntu).each do |os|
+  supports os
+end
+
 depends  'apt'
+
+source_url 'https://github.com/tas50/chef-kismet' if respond_to?(:source_url)
+issues_url 'https://github.com/tas50/chef-kismet/issues' if respond_to?(:issues_url)

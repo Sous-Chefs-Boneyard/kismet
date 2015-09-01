@@ -1,15 +1,23 @@
 kismet Cookbook
 ===============
-
-[![Build Status](https://travis-ci.org/tas50/chef_kismet.svg?branch=master)](https://travis-ci.org/tas50/chef_kismet)
+[![Build Status](https://travis-ci.org/tas50/chef-kismet.svg?branch=master)](https://travis-ci.org/tas50/chef-kismet)
+[![Cookbook Version](https://img.shields.io/cookbook/v/kismet.svg)](https://supermarket.chef.io/cookbooks/kismet)
 
 This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for
 setting up a wardriving rig using Chef Solo.
 
 Requirements
 ------------
+### Chef
+Chef 11+
 
-- `apt` - Apt is used to configure the kismet repository
+### Platform
+* Ubuntu 10.04+
+* Debian
+
+### Cookbooks:
+
+* apt
 
 Attributes
 ----------
