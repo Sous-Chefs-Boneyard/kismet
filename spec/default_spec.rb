@@ -5,5 +5,4 @@ describe 'kismet installation' do
     runner = ChefSpec::Runner.new(platform: 'ubuntu', version: '12.04')
     runner.converge 'kismet::default'
   end
-
 end
