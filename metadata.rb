@@ -14,3 +14,5 @@ depends 'apt'
 
 source_url 'https://github.com/tas50/chef-kismet' if respond_to?(:source_url)
 issues_url 'https://github.com/tas50/chef-kismet/issues' if respond_to?(:issues_url)
+
+chef_version '>= 11.0' if respond_to?(:chef_version)
