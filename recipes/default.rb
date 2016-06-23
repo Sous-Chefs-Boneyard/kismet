@@ -2,7 +2,7 @@
 # Cookbook Name:: kismet
 # Recipe:: default
 #
-# Copyright 2013-2014, Tim Smith - tsmith84@gmail.com
+# Copyright 2013-2016, Tim Smith - tsmith84@gmail.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ apt_repository 'kismet_wireless' do
   uri 'https://www.kismetwireless.net/code/'
   components ['kismet']
   key 'https://www.kismetwireless.net/code/dists/kismet-release.gpg'
-  distribution node['lsb']['codename']
+  distribution 'precise' # the last distro in their repo
 end
 
 # install kismet
