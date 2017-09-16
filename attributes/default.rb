@@ -69,7 +69,7 @@ default['kismet']['config']['enablesources'] = nil
 default['kismet']['config']['channellist'] = [
   'IEEE80211b:1:3,6:3,11:3,2,7,3,8,4,9,5,10',
   'IEEE80211a:36,40,44,48,52,56,60,64,149,153,157,161,165',
-  'IEEE80211ab:1:3,6:3,11:3,2,7,3,8,4,9,5,10,36,40,44,48,52,56,60,64,149,153,157,161,165'
+  'IEEE80211ab:1:3,6:3,11:3,2,7,3,8,4,9,5,10,36,40,44,48,52,56,60,64,149,153,157,161,165',
 ]
 default['kismet']['config']['channeldwell'] = 10
 
@@ -79,7 +79,7 @@ default['kismet']['config']['channeldwell'] = 10
 default['kismet']['config']['ouifile'] = [
   '/etc/manuf',
   '/usr/share/wireshark/wireshark/manuf',
-  '/usr/share/wireshark/manuf'
+  '/usr/share/wireshark/manuf',
 ]
 
 # GPS configuration
@@ -125,7 +125,7 @@ default['kismet']['config']['alerts'] = [
   'MSFBCOMSSID,5/min,1/sec',
   'MSFDLINKRATE,5/min,1/sec',
   'MSFNETGEARBEACON,5/min,1/sec',
-  'NULLPROBERESP,5/min,1/sec'
+  'NULLPROBERESP,5/min,1/sec',
 ]
 
 # Controls behavior of the APSPOOF alert.  SSID may be a literal match (ssid=) or
@@ -134,7 +134,7 @@ default['kismet']['config']['alerts'] = [
 # MAC addresses allowed.  MAC address masks are allowed.
 default['kismet']['config']['apspoof'] = [
   'Foo1:ssidregex="(?i:foobar)",validmacs=00:11:22:33:44:55',
-  'Foo2:ssid="Foobar",validmacs="00:11:22:33:44:55,aa:bb:cc:dd:ee:ff"'
+  'Foo2:ssid="Foobar",validmacs="00:11:22:33:44:55,aa:bb:cc:dd:ee:ff"',
 ]
 
 default['kismet']['config']['enablespeech'] = 'false'
@@ -148,7 +148,7 @@ default['kismet']['config']['sounds'] = [
   'packet,true',
   'gpslock,true',
   'gpslost,true',
-  'alert,true'
+  'alert,true',
 ]
 
 default['kismet']['config']['speechencoding'] = 'nato'
@@ -156,7 +156,7 @@ default['kismet']['config']['speech'] = [
   'new,"New network detected s.s.i.d. %1 channel %2"',
   'alert,"Alert %1"',
   'gpslost,"G.P.S. signal lost"',
-  'gpslock,"G.P.S. signal O.K."'
+  'gpslock,"G.P.S. signal O.K."',
 ]
 
 default['kismet']['config']['alertbacklog']     = 50
