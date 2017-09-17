@@ -1,57 +1,75 @@
 driver:
   name: dokken
-  chef_version: latest
   privileged: true # because Docker and SystemD/Upstart
+  chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
 
 transport:
   name: dokken
 
 provisioner:
   name: dokken
+  deprecations_as_errors: true
 
 verifier:
   name: inspec
-  format: doc
 
 platforms:
+- name: amazonlinux
+  driver:
+    image: dokken/amazonlinux
+    pid_one_command: /sbin/init
+
 - name: debian-7
   driver:
-    image: debian:7
+    image: dokken/debian-7
     pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install lsb-release -y
 
 - name: debian-8
   driver:
-    image: debian:8
+    image: dokken/debian-8
     pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install lsb-release -y
 
-- name: ubuntu-12.04
+- name: debian-9
   driver:
-    image: ubuntu-upstart:12.04
-    pid_one_command: /sbin/init
+    image: dokken/debian-9
+    pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
 
+- name: centos-6
+  driver:
+    image: dokken/centos-6
+    pid_one_command: /sbin/init
+
+- name: centos-7
+  driver:
+    image: dokken/centos-7
+    pid_one_command: /usr/lib/systemd/systemd
+
+- name: fedora-latest
+  driver:
+    image: dokken/fedora-latest
+    pid_one_command: /usr/lib/systemd/systemd
+
 - name: ubuntu-14.04
   driver:
-    image: ubuntu-upstart:14.04
+    image: dokken/ubuntu-14.04
     pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
 
 - name: ubuntu-16.04
   driver:
-    image: ubuntu:16.04
+    image: dokken/ubuntu-16.04
     pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
 
-suites:
-  - name: default
-    run_list:
-      - recipe[kismet::default]
+- name: opensuse-leap
+  driver:
+    image: dokken/opensuse-leap
+    pid_one_command: /bin/systemd

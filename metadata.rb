@@ -12,7 +12,7 @@ end
 
 depends 'apt'
 
-source_url 'https://github.com/tas50/chef-kismet' if respond_to?(:source_url)
-issues_url 'https://github.com/tas50/chef-kismet/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/tas50/chef-kismet'
+issues_url 'https://github.com/tas50/chef-kismet/issues'
 
-chef_version '>= 11.0' if respond_to?(:chef_version)
+chef_version '>= 12.1' if respond_to?(:chef_version)
