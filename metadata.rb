@@ -10,9 +10,7 @@ version          '0.3.0'
   supports os
 end
 
-depends 'apt'
-
 source_url 'https://github.com/tas50/chef-kismet'
 issues_url 'https://github.com/tas50/chef-kismet/issues'
 
-chef_version '>= 12.1' if respond_to?(:chef_version)
+chef_version '>= 12.9' if respond_to?(:chef_version)

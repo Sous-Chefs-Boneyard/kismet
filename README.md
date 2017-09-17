@@ -4,17 +4,22 @@
 This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for setting up a wardriving rig using Chef Solo.
 
 ## Requirements
+
 ### Platforms
-- Ubuntu 10.04+
+
+- Ubuntu
 - Debian
 
 ### Chef
-- Chef 11+
+
+- Chef 12.9+
 
 ### Cookbooks:
-- apt
+
+- none
 
 ## Attributes
+
 The attributes in this cookbook are used to drive the configuration dynamically. The following are used for the `gpsd` service.
 - `enable_gpsd` - Install and use gpsd.  Defaults to true
 - `start_daemon` - Start the daemon.  Defaults to true
