@@ -8,7 +8,7 @@ This cookbook configures the kismet wardriving application on Ubuntu.  Perfect f
 ### Platforms
 
 - Ubuntu
-- Debian
+- Debian 8+
 
 ### Chef
 
