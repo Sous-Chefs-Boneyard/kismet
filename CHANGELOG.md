@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the kismet cookbook.
 
+## 0.4.1
+
+- Fix a bad config template
+
 ## 0.4.0
 
 - Require Chef 12.9 or later and remove the need for the apt cookbook dependency
