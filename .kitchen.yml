@@ -9,7 +9,6 @@ verifier:
   name: inspec
 
 platforms:
-  - name: debian-7
   - name: debian-8
   - name: debian-9
   - name: ubuntu-14.04
