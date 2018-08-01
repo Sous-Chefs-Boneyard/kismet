@@ -1,5 +1,5 @@
 # kismet Cookbook
-[![Build Status](https://travis-ci.org/tas50/chef-kismet.svg?branch=master)](https://travis-ci.org/tas50/chef-kismet) [![Cookbook Version](https://img.shields.io/cookbook/v/kismet.svg)](https://supermarket.chef.io/cookbooks/kismet)
+[![Build Status](https://travis-ci.org/sous-chefs/kismet.svg?branch=master)](https://travis-ci.org/sous-chefs/kismet) [![Cookbook Version](https://img.shields.io/cookbook/v/kismet.svg)](https://supermarket.chef.io/cookbooks/kismet)
 
 This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for setting up a wardriving rig using Chef Solo.
 
@@ -19,6 +19,7 @@ This cookbook configures the kismet wardriving application on Ubuntu.  Perfect f
 - none
 
 ## Attributes
+
 
 The attributes in this cookbook are used to drive the configuration dynamically. The following are used for the `gpsd` service.
 - `enable_gpsd` - Install and use gpsd.  Defaults to true
@@ -73,29 +74,26 @@ ouifile=/usr/share/wireshark/manuf
 ```
 
 ## Usage
+
 Modify attributes for the configuration as required in a role. Add `recipe[kismet]` to your node's run list.
 
-## Contributing
-1. Fork the repository on Github
-2. Write you change
-3. Submit a Pull Request using Github
-
-## Testing
-Test that the default recipe converges automatically with [test-kitchen](http://rubygems.org/gems/test-kitchen).
-
-```
-bundle install
-bundle exec kitchen test
-```
-
 ## License and Authors
+
 - Tim Smith [tsmith84@gmail.com](mailto:tsmith84@gmail.com)
 - Joshua Timberman [opensource@housepub.org](mailto:opensource@housepub.org)
 
 Copyright:: 2013-2014, Tim Smith License:: Apache License, Version 2.0
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+```text
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-   [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
