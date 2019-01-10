@@ -34,12 +34,15 @@ if node['kismet']['enable_gpsd']
   end
 end
 
+codename = node['lsb']['codename'].to_s
+codename = 'stretch' if not %w(xenial bionic cosmic).include?(codename)
+
 # add the apt repository for kismet
 apt_repository 'kismet_wireless' do
-  uri 'https://www.kismetwireless.net/code/'
-  components ['kismet']
-  key 'https://www.kismetwireless.net/code/dists/kismet-release.gpg'
-  distribution 'precise' # the last distro in their repo
+  uri "https://www.kismetwireless.net/repos/apt/release/#{codename}"
+  components ['main']
+  key 'https://www.kismetwireless.net/repos/kismet-release.gpg.key'
+  distribution codename
 end
 
 # install kismet
