@@ -35,7 +35,7 @@ if node['kismet']['enable_gpsd']
 end
 
 codename = node['lsb']['codename'].to_s
-codename = 'stretch' if not %w(xenial bionic cosmic).include?(codename)
+codename = 'stretch' unless %w(xenial bionic cosmic).include?(codename)
 
 # add the apt repository for kismet
 apt_repository 'kismet_wireless' do
