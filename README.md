@@ -8,6 +8,10 @@
 
 This cookbook configures the kismet wardriving application on Ubuntu.  Perfect for setting up a wardriving rig using Chef Solo.
 
+## Maintainers
+
+This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit [sous-chefs.org](https://sous-chefs.org/) or come chat with us on the Chef Community Slack in [#sous-chefs](https://chefcommunity.slack.com/messages/C2V7B88SF).
+
 ## Requirements
 
 ### Platforms
