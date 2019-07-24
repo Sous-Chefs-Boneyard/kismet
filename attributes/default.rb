@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: kismet
+# Cookbook:: kismet
 # Attributes:: default
 #
-# Copyright 2013, Tim Smith - tsmith84@gmail.com
+# Copyright:: 2013, Tim Smith - tsmith84@gmail.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@ default['kismet']['config']['allowplugins'] = 'true'
 # "wlan0:name=intel,hop=false,channel=11"
 default['kismet']['config']['ncsource'] = nil
 
-# Comma-separated list of sources to enable.  This is only needed if you defined
-# multiple sources and only want to enable some of them.  By default, all defined
+# Comma-separated list of sources to enable. This is only needed if you defined
+# multiple sources and only want to enable some of them. By default, all defined
 # sources are enabled.
 # For example, if sources with name=prismsource and name=ciscosource are defined,
 # and you only want to enable those two:
@@ -74,7 +74,7 @@ default['kismet']['config']['channellist'] = [
 default['kismet']['config']['channeldwell'] = 10
 
 # OUI file, expected format 00:11:22<tab>manufname
-# IEEE OUI file used to look up manufacturer info.  We default to the
+# IEEE OUI file used to look up manufacturer info. We default to the
 # wireshark one since most people have that.
 default['kismet']['config']['ouifile'] = [
   '/etc/manuf',
@@ -128,10 +128,10 @@ default['kismet']['config']['alerts'] = [
   'NULLPROBERESP,5/min,1/sec',
 ]
 
-# Controls behavior of the APSPOOF alert.  SSID may be a literal match (ssid=) or
-# a regex (ssidregex=) if PCRE was available when kismet was built.  The allowed
+# Controls behavior of the APSPOOF alert. SSID may be a literal match (ssid=) or
+# a regex (ssidregex=) if PCRE was available when kismet was built. The allowed
 # MAC list must be comma-separated and enclosed in quotes if there are multiple
-# MAC addresses allowed.  MAC address masks are allowed.
+# MAC addresses allowed. MAC address masks are allowed.
 default['kismet']['config']['apspoof'] = [
   'Foo1:ssidregex="(?i:foobar)",validmacs=00:11:22:33:44:55',
   'Foo2:ssid="Foobar",validmacs="00:11:22:33:44:55,aa:bb:cc:dd:ee:ff"',
@@ -177,7 +177,7 @@ default['kismet']['config']['writeinterval']    = 300
 # %h is replaced by the home directory
 default['kismet']['config']['logtemplate'] = '%p%n-%D-%t-%i.%l'
 
-# File types to log, comma seperated.  Built-in log file types:
+# File types to log, comma seperated. Built-in log file types:
 # alert       Text file of alerts
 # gpsxml      XML per-packet GPS log
 # nettxt      Networks in text format
