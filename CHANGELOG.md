@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the kismet cookbook.
 
+## 0.4.2
+
+- Updated the apt repo setup to work on newer Ubuntu/Debian releases
+- Removed long_description metadata, which is unused by Chef Infra Client
+- Updated the cookbook to be maintained by Sous Chefs
+
 ## 0.4.1
 
 - Fix a bad config template
