@@ -16,8 +16,10 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Platforms
 
-- Ubuntu
-- Debian 8+
+- Centos 6 and 7
+- Debian 8 and 9
+- Ubuntu 16.04 and 18.04
+- Amazon 1 and 2
 
 ### Chef
 
