@@ -5,7 +5,7 @@ This file is used to list changes made in each version of the kismet cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.4.3 - *2021-06-01*]
 
 - migrate to actions
 
@@ -88,7 +88,7 @@ Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/sy
 
 The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.
 
-[Unreleased]: https://github.com/sous-chefs/kismet/compare/v0.4.2...HEAD
+[0.4.3 - *2021-06-01*]: https://github.com/sous-chefs/kismet/compare/v0.4.2...HEAD
 [0.4.2]: https://github.com/sous-chefs/kismet/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/sous-chefs/kismet/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/sous-chefs/kismet/compare/0.3.0...v0.4.0
